@@ -39,7 +39,7 @@ class AuthorEditHandler(tornado.web.RequestHandler):
         # print autInfo.fn
         # return
         self.render("author-edit.html",author=autInfo)
-        print "he"
+        print "hello"
 
     def post(self, *args):
         aut_id = args[0]
