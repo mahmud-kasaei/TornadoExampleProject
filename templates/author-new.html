@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+<link href='{{ static_url("css/bootstrap.css") }}' rel="stylesheet">
+<link href='{{ static_url("css/bootstrap-theme.css") }}' rel="stylesheet">
+    <link href='{{ static_url("css/basic.css") }}' rel="stylesheet">
+</head>
+<body>
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 ">
+        <h3 class="Yekan" style="color:#2233dd">افزودن نویسنده جدید</h3>
+          <form method="post" action="/author/new">
+
+          <div class="form-group">
+              <!--<label for="author-name" class="control-label Mitra" >نام نویسنده :</label>-->
+              <input type="text" name="author-name" id="author-name" value="" placeholder= "نام نویسنده..." class="form-control" />
+              <input type="text" name="author-family" id="author-family" placeholder="نام خانوادگی نویسنده..."/>
+              <!--<input type="email" name="author-email" id="author-email" value="" placeholder="ایمیل نویسنده..."  class="form-control"/>-->
+              <!--<input type="password" name="author-password" id="author-password" placeholder="کلمه عبور ..." class="form-control"/>-->
+
+          </div>
+
+
+        <input type="submit" class="btn btn-primary Yekan" value="ذخیره تغییرات" >
+          </form>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="editModal"  role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+         <form method="post" action="/category">
+      <div class="modal-header">
+        <button id="editBtn" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title Yekan" id="myModalLabel">ویرایش گروه های خبری</h4>
+      </div>
+      <div class="modal-body">
+
+          <div class="form-group">
+            <label for="category-name" class="control-label Mitra" >نام گروه :</label>
+            <input type="text" name="category-name" id="category-name" class="form-control" />
+
+          </div>
+
+        <input type="hidden" name="category-id" id="category-id" class="form-control" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default Yekan" data-dismiss="modal">بستن </button>
+        <input type="submit" class="btn btn-primary Yekan" value="ذخیره تغییرات" >
+      </div>
+
+              </form>
+    </div>
+  </div>
+</div>
+<script src="{{static_url('js/jquery.js')}}"></script>
+<script src="{{static_url('js/bootstrap.js')}}"></script>
+
+</body>
+</html>
