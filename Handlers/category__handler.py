@@ -36,7 +36,7 @@ class CategoryDeleteHandler(tornado.web.RequestHandler):
        cat_id=args[0]
        catInfo = Category.select().where(Category.id == cat_id).get().delete_instance()
        self.redirect("/category")
-
+       print "hello world."
 
 
 class CategoryNewHandler(tornado.web.RequestHandler):
