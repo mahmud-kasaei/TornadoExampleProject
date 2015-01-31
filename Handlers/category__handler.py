@@ -1,21 +1,23 @@
 import tornado
 from  models import *
 import peewee
+from auth__handler import  BaseHandler
 
 __author__ = 'mojtaba.banaie'
 
-class CategoryHandler(tornado.web.RequestHandler):
+class CategoryHandler(BaseHandler):
+     @tornado.web.authenticated
      def get(self):
         categories = Category.select()
         self.render('categories.html', categories = categories)
 
 
-
-class CategoryEditHandler(tornado.web.RequestHandler):
+class CategoryEditHandler(BaseHandler):
+     @tornado.web.authenticated
      def get(self, *args):
        cat_id=args[0]
        catInfo = Category.select().where(Category.id == cat_id).get()
-       self.render("category-edit.html",category=catInfo)
+       self.render("category-edit.html", category=catInfo)
 
 
      def post(self, *args):
@@ -31,7 +33,8 @@ class CategoryEditHandler(tornado.web.RequestHandler):
 
 
 
-class CategoryDeleteHandler(tornado.web.RequestHandler):
+class CategoryDeleteHandler(BaseHandler):
+     @tornado.web.authenticated
      def get(self, *args):
        cat_id=args[0]
        catInfo = Category.select().where(Category.id == cat_id).get().delete_instance()
@@ -39,7 +42,8 @@ class CategoryDeleteHandler(tornado.web.RequestHandler):
        print "hello world."
 
 
-class CategoryNewHandler(tornado.web.RequestHandler):
+class CategoryNewHandler(BaseHandler):
+     @tornado.web.authenticated
      def get(self, *args):
        self.render("category-new.html")
 

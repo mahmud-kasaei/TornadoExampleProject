@@ -15,17 +15,16 @@
         <a class="btn btn-lg btn-success Mitra pull-left" href="/author/new">ایجاد نویسنده جدید ...</a>
         <br/>      <br/>      <br/>
         <table class="table table-striped">
-       {% for author  in authors %}
+       {% for news  in news_category %}
         <tr class="Mitra">
-        <td>{{author.id}} </td>
+        <td>{{news.id}} </td>
 
-        <td>{{author.fn}}</td>
-        <td>{{author.ln}}</td>
-        <!--<td>{{author.password}}</td>-->
-        <td>{{author.email}}</td>
+        <td>{{news.title}}</td>
+        <td>{{news.body}}</td>
 
-        <td> <a class="btn" href="/author/edit/{{author.id}}" > <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp; ویرایش </button></td>
-         <td> <a class="btn" href="/author/delete/{{author.id}}" > <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; حذف </button></td>
+        <td>{{news.date}}</td>
+            <td> <a class="btn" href="/news/delete/{{news.id}}" > <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; حذف خبر از گروه...</button></td>
+
         </tr>
        {% end %}
        </table>

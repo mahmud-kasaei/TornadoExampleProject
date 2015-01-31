@@ -1,9 +1,10 @@
 import tornado
-
+from auth__handler import BaseHandler
 __author__ = 'mojtaba.banaie'
 
 
-class IndexHandler(tornado.web.RequestHandler):
+class IndexHandler(BaseHandler):
+    @tornado.web.authenticated
     def get(self):
             self.render('index.html',UN= "Hello!")
         # else :

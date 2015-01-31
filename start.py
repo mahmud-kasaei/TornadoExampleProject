@@ -19,11 +19,12 @@ class MedxApplication(tornado.web.Application):
             debug=True,
             cookie_secret="61oETz3455545gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
-            static_path= os.path.join(os.path.dirname(__file__), "static")
+            static_path= os.path.join(os.path.dirname(__file__), "static"),
+            login_url= "/login",
 
 
         )
-        tornado.web.Application.__init__(self,handlers,**settings)
+        tornado.web.Application.__init__(self, handlers, **settings)
 
 if __name__ == '__main__':
     tornado.options.parse_command_line()

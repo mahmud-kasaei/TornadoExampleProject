@@ -9,17 +9,18 @@ class MySQLModel(peewee.Model):
 
 class Category(MySQLModel) :
     id = peewee.PrimaryKeyField()
-    name  = peewee.CharField()
-
+    name = peewee.CharField()
+    news_count=peewee.IntegerField(0)
 
 class Author (MySQLModel) :
     id = peewee.PrimaryKeyField()
     fn  = peewee.CharField()
     ln = peewee.CharField()
-
+    email = peewee.CharField()
+    password = peewee.CharField()
 
 class News(MySQLModel):
-    id = peewee.IntegerField()
+    id = peewee.PrimaryKeyField()
     title = peewee.CharField()
     body = peewee.CharField()
     date = peewee.CharField()

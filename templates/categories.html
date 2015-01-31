@@ -21,8 +21,10 @@
 
         <td>{{category.name}}</td>
 
-        <td> <a class="btn" href="/category/edit/{{category.id}}" > <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp; ویرایش </button></td>
-         <td> <a class="btn" href="/category/delete/{{category.id}}" > <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; حذف </button></td>
+        <td> <a class="btn" href="/category/edit/{{category.id}}" > <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp; ویرایش گروه </button></td>
+         <td> <a class="btn" href="/category/delete/{{category.id}}" > <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; حذف گروه </button></td>
+         <td> <a class="btn" href="/news/new/{{category.id}}" > <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; افزودن خبر به گروه </button></td>
+         <td> <a class="btn" href="/news/category/{{category.id}}" > <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp; مشاهده اخبار گروه </button></td>
         </tr>
        {% end %}
        </table>
